@@ -1,0 +1,76 @@
+name: "Сообщить об ошибке"
+description: "Помогите исправить ошибку в программе «Тапочек»"
+title: "[Ошибка] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за сообщение! Обращения GitHub публичны.
+        **Не прикладывайте без обезличивания реальные области аккредитации, PDF, XML, журналы с персональными данными, пароли или другую конфиденциальную информацию.**
+  - type: input
+    id: app_version
+    attributes:
+      label: "Версия «Тапочка»"
+      description: "Если номер неизвестен, укажите «не знаю»."
+      placeholder: "Например: 0.9.0-beta.1"
+    validations:
+      required: true
+  - type: input
+    id: windows_version
+    attributes:
+      label: "Версия Windows"
+      placeholder: "Например: Windows 11 x64"
+    validations:
+      required: false
+  - type: dropdown
+    id: component
+    attributes:
+      label: "Где возникла проблема?"
+      options:
+        - "Установка или запуск"
+        - "Импорт PDF"
+        - "Просмотр или редактирование области аккредитации"
+        - "Методики, показатели и справочники ФСА"
+        - "Экспорт XML"
+        - "Интерфейс"
+        - "Другое"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: "Как повторить ошибку?"
+      description: "Опишите действия по порядку, чтобы можно было воспроизвести проблему."
+      placeholder: |
+        1. Открыл программу...
+        2. Выбрал...
+        3. Нажал...
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Что произошло?"
+      description: "Укажите текст ошибки, если он появился."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Что должно было произойти?"
+    validations:
+      required: false
+  - type: textarea
+    id: attachments
+    attributes:
+      label: "Дополнительные сведения (по желанию)"
+      description: "Скриншоты или обезличенные фрагменты журналов. Проверьте их перед отправкой."
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Перед отправкой"
+      options:
+        - label: "Я проверил(а), что сообщение и вложения не содержат конфиденциальной информации и персональных данных третьих лиц."
+          required: true
