@@ -1,0 +1,52 @@
+name: "Предложить улучшение"
+description: "Предложите функцию или изменение в программе «Тапочек»"
+title: "[Предложение] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Спасибо за идею! Опишите рабочую задачу и ожидаемую пользу.
+        Обращения GitHub публичны — не публикуйте конфиденциальные документы и персональные данные.
+  - type: dropdown
+    id: component
+    attributes:
+      label: "К чему относится предложение?"
+      options:
+        - "Импорт и просмотр документов"
+        - "Редактирование области аккредитации"
+        - "Справочники и сопоставление данных"
+        - "Экспорт и проверка XML"
+        - "Удобство интерфейса"
+        - "Установка или обновления"
+        - "Другое"
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Какую задачу Вы хотите решить?"
+      description: "Опишите затруднение в текущем рабочем процессе."
+      placeholder: "Сейчас при подготовке области аккредитации приходится..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Какое улучшение Вы предлагаете?"
+      description: "Опишите желаемое поведение программы."
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Примеры или возможные альтернативы (необязательно)"
+      description: "Не прикладывайте документы с персональными данными или конфиденциальными сведениями."
+    validations:
+      required: false
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: "Перед отправкой"
+      options:
+        - label: "Я проверил(а), что сообщение и вложения не содержат конфиденциальной информации и персональных данных третьих лиц."
+          required: true
